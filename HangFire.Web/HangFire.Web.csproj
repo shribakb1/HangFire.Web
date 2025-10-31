@@ -9,6 +9,7 @@
   <ItemGroup>
     <PackageReference Include="Hangfire" Version="1.8.21" />
     <PackageReference Include="Microsoft.Data.SqlClient" Version="6.1.2" />
+    <PackageReference Include="System.ServiceModel.Syndication" Version="9.0.10" />
   </ItemGroup>
 
 </Project>
