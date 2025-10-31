@@ -22,6 +22,12 @@ app.MapHangfireDashboard();
 
 app.MapGet("/", () => "Hello World!");
 
+
+RecurringJob.AddOrUpdate<WebPuller>(
+    "pull-rss-feed",
+    x => x.GetRssItemUrlAsync("https://consultwithgriff.com/rss.xml", "d:\\rss\\consultwithgriff_rss_urls.json"),
+    "* * * * *");
+
 app.MapGet("/pull", (IBackgroundJobClient client) =>
 {
     var url = "https://consultwithgriff.com/rss.xml";
